@@ -282,7 +282,7 @@ export default function BigSection() {
     <div className="absolute top-0 left-0 z-30 bg-[#1022FF] bg-opacity-90 px-3 py-3">
       <p className="text-white text-[20px] sm:text-[20px] lg:text-[45px] font-medium leading-none italic">
         {item.views}
-        <span className="block text-[12px] lg:text-[18px]">views</span>
+        <span className="block text-[12px] lg:text-[18px]">views</span>aaaa
       </p>
     </div>
 
