@@ -28,7 +28,7 @@ import short6 from '../assets/video/WNEdTRXrmR0.mp4';
 import short7 from '../assets/video/x0ZqbnQ_7mg.mp4';
 
 const shortVideos = [
-    { video: short1, views: '49M', id: '_x0BBGON6_0', title: 'KSI vs Cristiano Ronaldo: Asking Hollywood Tourists Who’s More Popular?' },
+    { video: jesseIntw, views: '49M', id: '_x0BBGON6_0', title: 'KSI vs Cristiano Ronaldo: Asking Hollywood Tourists Who’s More Popular?' },
     { video: short2, views: '4.9M', id: '-3MLtDK95YM', title: 'I Ordered Every Appetizer At Chili’s' },
     { video: short3, views: '4.6M', id: 'oEyVDVDQfaY', title: 'Why Dude Perfect Rejected Budweiser' },
     { video: short4, views: '5.5M', id: 'GpdZozkwcPg', title: 'Is This The Best Fried Chicken In The World?' },
@@ -269,7 +269,12 @@ export default function BigSection() {
         className="relative cursor-pointer group rounded-lg overflow-hidden"
       >
         {/* VIDEO */}
-        <video
+        <img
+                                        src={item.video}
+                                        alt={item.title}
+                                        className="w-full h-full object-cover"
+                                    />
+        {/* <video
           src={item.video}
           className="w-full h-full object-cover pointer-events-none aspect-[9/16]"
           muted
@@ -277,7 +282,7 @@ export default function BigSection() {
           loop
           playsInline
           preload="none"
-        />
+        /> */}
 
         {/* Views */}
         <div className="absolute top-0 left-0 text-[20px] sm:text-[20px] lg:text-[45px] italic text-white leading-none bg-[#1022FF] px-3 py-3 z-30">
