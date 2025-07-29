@@ -268,7 +268,7 @@ export default function BigSection() {
                                 <div className="aspect-[9/16] w-full overflow-hidden relative rounded-lg">
                                 <video
                                     src={item.video}
-                                    className="w-full h-full object-cover pointer-events-none"
+                                    className="w-full h-full object-cover pointer-events-none z-10"
                                     muted
                                     autoPlay
                                     loop
@@ -277,11 +277,11 @@ export default function BigSection() {
                                 />
                                 </div>
 
-                                <div className="absolute top-0 left-0 text-[20px] sm:text-[20px] lg:text-[45px] italic text-white leading-none bg-[#1022FF] px-3 py-3">
+                                <div className="absolute top-0 left-0 z-20 text-[20px] sm:text-[20px] lg:text-[45px] italic text-white leading-none bg-[#1022FF] px-3 py-3">
                                         {item.views} <span className='block text-[12px] lg:text-[18px]'>views</span>
                                 </div>
 
-                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition z-10">
+                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition z-30">
                                 <span className="text-white text-2xl">▶</span>
                                 </div>
                             </div>
