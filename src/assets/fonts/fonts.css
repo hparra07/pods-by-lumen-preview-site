@@ -1,0 +1,55 @@
+    @font-face {
+    font-family: 'PolySans';
+    src: url('./PolySansBulky.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'PolySans';
+    src: url('./PolySansBulkyItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    }
+
+    @font-face {
+    font-family: 'PolySans';
+    src: url('./PolySansMedian.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'PolySans';
+    src: url('./PolySansMedianItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    }
+
+    @font-face {
+    font-family: 'PolySans';
+    src: url('./PolySansNeutral.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'PolySans';
+    src: url('./PolySansNeutralItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    }
+
+    @font-face {
+    font-family: 'PolySans';
+    src: url('./PolySansSlim.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'PolySans';
+    src: url('./PolySansSlimItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    }
