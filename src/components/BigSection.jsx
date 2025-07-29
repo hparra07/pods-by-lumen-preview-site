@@ -19,7 +19,7 @@ import mrBeast from '../assets/images/content--thumbnail.png';
 import dannyDuncan from '../assets/images/content--thumbnail-2.png';
 import jayPark from '../assets/images/content--thumbnail-3.png'; 
 
-import short1 from '../assets/video/_x0BBGON6_0.mp4';
+import short1 from '../assets/video/x0BBGON6_0.mp4';
 import short2 from '../assets/video/-3MLtDK95YM.mp4';
 import short3 from '../assets/video/oEyVDVDQfaY.mp4';
 import short4 from '../assets/video/GpdZozkwcPg.mp4';
