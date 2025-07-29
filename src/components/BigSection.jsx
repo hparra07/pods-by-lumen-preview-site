@@ -256,36 +256,43 @@ export default function BigSection() {
                             }}
                         >
                         {[...shortVideos, ...shortVideos].map((item, index) => (
-                            <SwiperSlide key={`short-local-${index}`} className="!w-[300px] md:!w-[400px] flex-shrink-0">
-                            <div
-                                onClick={() => {
-                                setVideoUrl(item.video);
-                                setVideoType('local');
-                                setSelectedVideo(item); // nuevo estado
-                                }}
-                                className="relative cursor-pointer group rounded-lg overflow-hidden"
-                            >
-                                <div className="aspect-[9/16] w-full overflow-hidden relative rounded-lg">
-                                <video
-                                    src={item.video}
-                                    className="w-full h-full object-cover pointer-events-none"
-                                    muted
-                                    autoPlay
-                                    loop
-                                    playsInline
-                                    preload="none"
-                                />
-                                </div>
+<SwiperSlide key={`short-local-${index}`} className="!w-[300px] md:!w-[400px] flex-shrink-0">
+  <div
+    onClick={() => {
+      setVideoUrl(item.video);
+      setVideoType('local');
+      setSelectedVideo(item);
+    }}
+    className="relative cursor-pointer group rounded-lg overflow-hidden"
+  >
+    {/* 🔹 Video */}
+    <div className="aspect-[9/16] w-full overflow-hidden relative rounded-lg z-10">
+      <video
+        src={item.video}
+        className="w-full h-full object-cover pointer-events-none"
+        muted
+        autoPlay
+        loop
+        playsInline
+        preload="none"
+      />
+    </div>
 
-                                <div className="absolute top-0 left-0 text-[20px] sm:text-[20px] lg:text-[45px] italic text-white leading-none bg-[#1022FF] px-3 py-3">
-                                        {item.views} <span className='block text-[12px] lg:text-[18px]'>views</span>
-                                </div>
+    {/* 🔹 Texto de views — separamos y posicionamos arriba del slide */}
+    <div className="absolute top-0 left-0 z-30 bg-[#1022FF] bg-opacity-90 px-3 py-3">
+      <p className="text-white text-[20px] sm:text-[20px] lg:text-[45px] font-medium leading-none italic">
+        {item.views}
+        <span className="block text-[12px] lg:text-[18px]">views</span>
+      </p>
+    </div>
 
-                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                                <span className="text-white text-2xl">▶</span>
-                                </div>
-                            </div>
-                            </SwiperSlide>
+    {/* 🔹 Overlay del ícono "play" */}
+    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition z-20">
+      <span className="text-white text-2xl">▶</span>
+    </div>
+  </div>
+</SwiperSlide>
+
                         ))}
                         </Swiper>
 
