@@ -265,8 +265,9 @@ export default function BigSection() {
     }}
     className="relative cursor-pointer group rounded-lg overflow-hidden"
   >
-    {/* 🔹 Video */}
-    <div className="aspect-[9/16] w-full overflow-hidden relative rounded-lg z-10">
+    {/* Contenedor de video + overlay + views */}
+    <div className="relative aspect-[9/16] w-full rounded-lg overflow-hidden">
+      {/* VIDEO */}
       <video
         src={item.video}
         className="w-full h-full object-cover pointer-events-none"
@@ -276,24 +277,21 @@ export default function BigSection() {
         playsInline
         preload="none"
       />
+
+      {/* 🔹 Texto de views — SIEMPRE VISIBLE */}
+      <div className="absolute top-0 left-0 z-30 bg-[#1022FF] bg-opacity-90 px-3 py-3">
+        <p className="text-white text-[20px] sm:text-[20px] lg:text-[45px] font-medium leading-none italic">
+          {item.views}
+          <span className="block text-[12px] lg:text-[18px]">views</span>aa
+        </p>
+      </div>
+
+      {/* 🔹 Overlay del ícono "play" — SOLO EN DESKTOP */}
+      <div className="hidden sm:flex absolute inset-0 bg-black/40 items-center justify-center
+        opacity-0 group-hover:opacity-100 transition z-20">
+        <span className="text-white text-2xl">▶</span>
+      </div>
     </div>
-
-    {/* 🔹 Texto de views — separamos y posicionamos arriba del slide */}
-<div className="absolute top-0 left-0 z-30 bg-[#1022FF] bg-opacity-90 px-3 py-3">
-  <p className="text-white text-[20px] sm:text-[20px] lg:text-[45px] font-medium leading-none italic">
-    {item.views}
-    <span className="block text-[12px] lg:text-[18px]">views</span>aaa
-  </p>
-</div>
-
-
-    {/* 🔹 Overlay del ícono "play" */}
-<div className="hidden sm:flex absolute inset-0 bg-black/40 items-center justify-center
-  opacity-0 group-hover:opacity-100 transition z-20">
-  <span className="text-white text-2xl">▶</span>
-</div>
-
-
   </div>
 </SwiperSlide>
 
