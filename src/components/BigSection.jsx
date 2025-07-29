@@ -240,7 +240,7 @@ export default function BigSection() {
   speed={5000}
   slidesPerView={1}
   centeredSlides={true}
-  grabCursor={true}
+  grabCursor={false}
   autoplay={{
     delay: 0,
     disableOnInteraction: false,
