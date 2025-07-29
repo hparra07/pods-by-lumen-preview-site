@@ -266,11 +266,10 @@ export default function BigSection() {
     className="relative cursor-pointer group rounded-lg overflow-hidden"
   >
     {/* Contenedor de video + overlay + views */}
-    <div className="relative aspect-[9/16] w-full rounded-lg overflow-hidden">
       {/* VIDEO */}
       <video
         src={item.video}
-        className="w-full h-full object-cover pointer-events-none"
+        className="w-full h-full object-cover pointer-events-none [aspect-[9/16]"
         muted
         autoPlay
         loop
@@ -282,7 +281,7 @@ export default function BigSection() {
       <div className="absolute top-0 left-0 z-30 bg-[#1022FF] bg-opacity-90 px-3 py-3">
         <p className="text-white text-[20px] sm:text-[20px] lg:text-[45px] font-medium leading-none italic">
           {item.views}
-          <span className="block text-[12px] lg:text-[18px]">views</span>aa
+          <span className="block text-[12px] lg:text-[18px]">views</span>123
         </p>
       </div>
 
@@ -291,7 +290,6 @@ export default function BigSection() {
         opacity-0 group-hover:opacity-100 transition z-20">
         <span className="text-white text-2xl">▶</span>
       </div>
-    </div>
   </div>
 </SwiperSlide>
 
