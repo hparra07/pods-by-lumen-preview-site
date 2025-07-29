@@ -279,14 +279,12 @@ export default function BigSection() {
     </div>
 
     {/* 🔹 Texto de views — separamos y posicionamos arriba del slide */}
-<div className="absolute top-0 left-0 z-30 bg-[#1022FF] bg-opacity-90 px-3 py-3
-  opacity-100 sm:group-hover:opacity-100 transition">
+<div className="absolute top-0 left-0 z-30 bg-[#1022FF] bg-opacity-90 px-3 py-3">
   <p className="text-white text-[20px] sm:text-[20px] lg:text-[45px] font-medium leading-none italic">
     {item.views}
-    <span className="block text-[12px] lg:text-[18px]">views</span>
+    <span className="block text-[12px] lg:text-[18px]">views</span>aaa
   </p>
 </div>
-
 
 
     {/* 🔹 Overlay del ícono "play" */}
@@ -294,6 +292,7 @@ export default function BigSection() {
   opacity-0 group-hover:opacity-100 transition z-20">
   <span className="text-white text-2xl">▶</span>
 </div>
+
 
   </div>
 </SwiperSlide>
