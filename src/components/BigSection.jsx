@@ -247,7 +247,7 @@ export default function BigSection() {
   spaceBetween={80}
   loop={true}
   speed={5000}
-  slidesPerView={1}
+  slidesPerView="auto"
   centeredSlides={true}
   grabCursor={false}
   autoplay={{
@@ -258,16 +258,16 @@ export default function BigSection() {
     el: '.swiper-custom-pagination-shorts',
     type: 'progressbar',
   }}
-  breakpoints={{
+/*   breakpoints={{
     640: { slidesPerView: 2 },
     768: { slidesPerView: 3 },
     1024: { slidesPerView: 4 },
-  }}
+  }} */
 >
   {[...shortVideos, ...shortVideos].map((item, index) => (
     <SwiperSlide
       key={`short-local-${index}`}
-      className="min-w-[300px] w-auto flex-shrink-0"
+      className="min-w-[300px] !w-[80%] lg:!w-[28%] flex-shrink-0"
     >
       <div
         onClick={() => {
@@ -278,12 +278,12 @@ export default function BigSection() {
         className="relative cursor-pointer group rounded-lg overflow-hidden"
       >
         {/* VIDEO */}
-        <img
+        {/* <img
                                         src={item.img}
                                         alt={item.title}
                                         className="w-full h-full object-cover"
-                                    />
-        {/* <video
+                                    /> */}
+        <video
           src={item.video}
           className="w-full h-full object-cover pointer-events-none aspect-[9/16]"
           muted
@@ -291,7 +291,7 @@ export default function BigSection() {
           loop
           playsInline
           preload="none"
-        /> */}
+        />
 {/* <video
   src={item.video}
   className="w-full h-full object-cover pointer-events-none aspect-[9/16]"
