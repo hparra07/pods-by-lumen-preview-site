@@ -27,14 +27,17 @@ import short5 from '../assets/video/FEnFuoVmGi.mp4';
 import short6 from '../assets/video/WNEdTRXrmR0.mp4';
 import short7 from '../assets/video/x0ZqbnQ_7mg.mp4';
 
+import short1Gif from '../assets/gif/x0BBGON6_0.gif';
+
+
 const shortVideos = [
-    { video: short1, views: '49M', id: '_x0BBGON6_0', title: 'KSI vs Cristiano Ronaldo: Asking Hollywood Tourists Who’s More Popular?' },
-    { video: short2, views: '4.9M', id: '-3MLtDK95YM', title: 'I Ordered Every Appetizer At Chili’s' },
-    { video: short3, views: '4.6M', id: 'oEyVDVDQfaY', title: 'Why Dude Perfect Rejected Budweiser' },
-    { video: short4, views: '5.5M', id: 'GpdZozkwcPg', title: 'Is This The Best Fried Chicken In The World?' },
-    { video: short5, views: '62M', id: 'FEnFuoVmGi', title: '*sips third coffee of the day* ☕️' },
-    { video: short6, views: '3M', id: 'WNEdTRXrmR0', title: 'Meet MrBeast’s Editor: Mack' },
-    { video: short7, views: '15M', id: 'x0ZqbnQ_7mg', title: 'wait a damn minuteeeeee.....' },
+    { video: short1Gif, views: '49M', id: '_x0BBGON6_0', title: 'KSI vs Cristiano Ronaldo: Asking Hollywood Tourists Who’s More Popular?' },
+    { video: short1Gif, views: '4.9M', id: '-3MLtDK95YM', title: 'I Ordered Every Appetizer At Chili’s' },
+    { video: short1Gif, views: '4.6M', id: 'oEyVDVDQfaY', title: 'Why Dude Perfect Rejected Budweiser' },
+    { video: short1Gif, views: '5.5M', id: 'GpdZozkwcPg', title: 'Is This The Best Fried Chicken In The World?' },
+    { video: short1Gif, views: '62M', id: 'FEnFuoVmGi', title: '*sips third coffee of the day* ☕️' },
+    { video: short1Gif, views: '3M', id: 'WNEdTRXrmR0', title: 'Meet MrBeast’s Editor: Mack' },
+    { video: short1Gif, views: '15M', id: 'x0ZqbnQ_7mg', title: 'wait a damn minuteeeeee.....' },
 ];
 
 const videos = [
@@ -269,11 +272,11 @@ export default function BigSection() {
         className="relative cursor-pointer group rounded-lg overflow-hidden"
       >
         {/* VIDEO */}
-        {/* <img
+        <img
                                         src={item.video}
                                         alt={item.title}
                                         className="w-full h-full object-cover"
-                                    /> */}
+                                    />
         {/* <video
           src={item.video}
           className="w-full h-full object-cover pointer-events-none aspect-[9/16]"
@@ -283,7 +286,7 @@ export default function BigSection() {
           playsInline
           preload="none"
         /> */}
-<video
+{/* <video
   src={item.video}
   className="w-full h-full object-cover pointer-events-none aspect-[9/16]"
   muted
@@ -291,7 +294,7 @@ export default function BigSection() {
   loop
   playsInline
   preload="auto"
-/>
+/> */}
 
         {/* Views */}
         <div className="absolute top-0 left-0 text-[20px] sm:text-[20px] lg:text-[45px] italic text-white leading-none bg-[#1022FF] px-6 py-3 z-30">
