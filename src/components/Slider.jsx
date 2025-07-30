@@ -33,7 +33,7 @@ export default function Slider() {
 
         {/* Contenido */}
         <div className="relative z-10">
-            <h2 className="text-[32px] sm:text-[35px] lg:text-[45px] font-medium text-center">
+            <h2 className="text-[32px] sm:text-[35px] lg:text-[45px] font-medium text-center leading-none">
             We’ve worked with <span className="font-extrabold block md:inline">The Best</span>
             </h2>
 
@@ -55,14 +55,14 @@ export default function Slider() {
                         el: '.swiper-custom-pagination',
                         type: 'progressbar',
                     }}
-                    breakpoints={{
+                    /* breakpoints={{
                         640: { slidesPerView: 2 },
                         768: { slidesPerView: 3 },
                         1024: { slidesPerView: 4 }
-                    }}
+                    }} */
                 >
                     {people.map((person, index) => (
-                        <SwiperSlide key={index}>
+                        <SwiperSlide key={index} className='min-w-[300px] !w-[80%] lg:!w-[28%] flex-shrink-0'>
                             <div className="relative w-full h-full overflow-hidden">
                                 <img
                                     src={person.img}

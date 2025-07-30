@@ -15,11 +15,11 @@ export default function Brands() {
     return (
         <section className="w-full lg:max-w-[1440px] mx-auto py-20 bg-white text-black pt-[60px] md:pt-[80px] lg:pt-[120px] pb-[60px] md:pb-[140px] lg:pb-[200px]">
             <div className="px-6 text-center">
-                <h2 className="text-[32px] sm:text-[35px] lg:text-[45px] font-medium">
+                <h2 className="text-[32px] sm:text-[35px] lg:text-[45px] font-medium leading-none">
                     And for <span className="font-extrabold block md:inline">The Biggest</span>
                 </h2>
 
-                <div className="mt-[20px] md:mt-[60px] grid grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 lg:gap-12 items-center justify-items-center">
+                <div className="mt-[40px] md:mt-[60px] grid grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 lg:gap-12 items-center justify-items-center">
                 {/* Logos */}
                     <img src={toyotaLogo} alt="Toyota" className="h-10 md:h-20 object-contain" />
                     <img src={crocsLogo} alt="Crocs" className="h-10 object-contain" />

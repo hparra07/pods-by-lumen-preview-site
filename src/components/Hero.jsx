@@ -24,7 +24,7 @@ export default function Hero() {
             </div>
 
             {/* Logo */}
-            <img src={podsLogo} className="logo react absolute top-[60px] z-20" alt="Pods by Lumen" />
+            <img src={podsLogo} className="logo react absolute top-[60px] z-20 w-40 md:w-auto" alt="Pods by Lumen" />
 
             {/* Contenido */}
                 <div className="relative z-20 w-full lg:max-w-[1280px] pb-10 md:pb-[60px] lg:pb-0 px-[20px] md:px-[40px] lg:px-6 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-evenly">

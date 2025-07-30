@@ -275,7 +275,7 @@ export default function BigSection() {
           setVideoType('local');
           setSelectedVideo(item);
         }}
-        className="relative cursor-pointer group rounded-lg overflow-hidden"
+        className="relative cursor-pointer group overflow-hidden"
       >
         {/* VIDEO */}
         {/* <img
