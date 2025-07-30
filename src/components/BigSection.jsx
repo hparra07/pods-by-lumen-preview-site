@@ -28,16 +28,22 @@ import short6 from '../assets/video/WNEdTRXrmR0.mp4';
 import short7 from '../assets/video/x0ZqbnQ_7mg.mp4';
 
 import short1Gif from '../assets/gif/x0BBGON6_0.gif';
+import short2Gif from '../assets/gif/3MLtDK95YM.gif';
+import short3Gif from '../assets/gif/oEyVDVDQfaY.gif';
+import short4Gif from '../assets/gif/GpdZozkwcPg.gif';
+import short5Gif from '../assets/gif/FEnFuoVmGi.gif';
+import short6Gif from '../assets/gif/WNEdTRXrmR0.gif';
+import short7Gif from '../assets/gif/x0ZqbnQ_7mg.gif';
 
 
 const shortVideos = [
-    { video: short1Gif, views: '49M', id: '_x0BBGON6_0', title: 'KSI vs Cristiano Ronaldo: Asking Hollywood Tourists Who’s More Popular?' },
-    { video: short1Gif, views: '4.9M', id: '-3MLtDK95YM', title: 'I Ordered Every Appetizer At Chili’s' },
-    { video: short1Gif, views: '4.6M', id: 'oEyVDVDQfaY', title: 'Why Dude Perfect Rejected Budweiser' },
-    { video: short1Gif, views: '5.5M', id: 'GpdZozkwcPg', title: 'Is This The Best Fried Chicken In The World?' },
-    { video: short1Gif, views: '62M', id: 'FEnFuoVmGi', title: '*sips third coffee of the day* ☕️' },
-    { video: short1Gif, views: '3M', id: 'WNEdTRXrmR0', title: 'Meet MrBeast’s Editor: Mack' },
-    { video: short1Gif, views: '15M', id: 'x0ZqbnQ_7mg', title: 'wait a damn minuteeeeee.....' },
+    { video: short1, img: short1Gif, views: '49M', id: '_x0BBGON6_0', title: 'KSI vs Cristiano Ronaldo: Asking Hollywood Tourists Who’s More Popular?' },
+    { video: short2, img: short2Gif, views: '4.9M', id: '-3MLtDK95YM', title: 'I Ordered Every Appetizer At Chili’s' },
+    { video: short3, img: short3Gif, views: '4.6M', id: 'oEyVDVDQfaY', title: 'Why Dude Perfect Rejected Budweiser' },
+    { video: short4, img: short4Gif, views: '5.5M', id: 'GpdZozkwcPg', title: 'Is This The Best Fried Chicken In The World?' },
+    { video: short5, img: short5Gif, views: '62M', id: 'FEnFuoVmGi', title: '*sips third coffee of the day* ☕️' },
+    { video: short6, img: short6Gif, views: '3M', id: 'WNEdTRXrmR0', title: 'Meet MrBeast’s Editor: Mack' },
+    { video: short7, img: short7Gif, views: '15M', id: 'x0ZqbnQ_7mg', title: 'wait a damn minuteeeeee.....' },
 ];
 
 const videos = [
@@ -273,7 +279,7 @@ export default function BigSection() {
       >
         {/* VIDEO */}
         <img
-                                        src={item.video}
+                                        src={item.img}
                                         alt={item.title}
                                         className="w-full h-full object-cover"
                                     />
