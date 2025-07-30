@@ -275,7 +275,7 @@ export default function BigSection() {
           setVideoType('local');
           setSelectedVideo(item);
         }}
-        className="relative cursor-pointer group overflow-hidden"
+        className="relative cursor-pointer group overflow-visible"
       >
         {/* VIDEO */}
         {/* <img
@@ -285,7 +285,7 @@ export default function BigSection() {
                                     /> */}
         <video
           src={item.video}
-          className="w-full h-full object-cover pointer-events-none aspect-[9/16]"
+          className="w-full h-full object-cover pointer-events-auto aspect-[9/16]"
           muted
           autoPlay
           loop
@@ -303,7 +303,7 @@ export default function BigSection() {
 /> */}
 
         {/* Views */}
-        <div className="absolute top-0 left-0 text-[20px] sm:text-[20px] lg:text-[45px] italic text-white leading-none bg-[#1022FF] px-6 py-3 z-30">
+        <div className="absolute top-0 left-0 text-[20px] sm:text-[20px] lg:text-[45px] italic text-white leading-none bg-[#1022FF] px-6 py-3 z-[999]">
           {item.views}
           <span className="block text-[16px] lg:text-[18px]">views</span>
         </div>
