@@ -21,6 +21,28 @@ body{
   font-weight: 400;
 }
 
+/* WebKit para forzar el renderizado en iOS */
+@supports (-webkit-transform: rotate(0)) {
+  .views-overlay {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Mejora de visibilidad */
+@supports (-webkit-transform-style: preserve-3d) {
+  .views-overlay {
+    -webkit-backface-visibility: visible;
+    -webkit-transform-style: preserve-3d;
+  }
+}
+
+/* Mejor renderizado de interacción */
+@supports (-webkit-appearance: none) {
+  .views-overlay {
+    -webkit-appearance: none;
+  }
+}
+
 .swiper-pagination-progressbar, .swiper-custom-pagination {
   position: relative !important;
   background-color: #ffffff !important;

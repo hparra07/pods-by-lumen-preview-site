@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 
 import CountUp from 'react-countup';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 import team from '../assets/images/team--pic-wrapper.png';
 import bigGrid from '../assets/images/big-white-grid.svg';
@@ -83,6 +83,15 @@ export default function BigSection() {
     const [videoUrl, setVideoUrl] = useState(null);
     const [videoType, setVideoType] = useState(null); // 'long' o 'short'
     const [selectedVideo, setSelectedVideo] = useState(null);
+    
+    useEffect(() => {
+        const div = document.querySelector('.views-overlay');
+        if (div) {
+            div.style.visibility = 'visible';
+            div.style.opacity = '1';
+            div.offsetHeight; // Esto fuerza el reflujo del DOM
+        }
+    }, []);
 
     return (
         <section className="bg-black text-white relative">
@@ -267,7 +276,7 @@ export default function BigSection() {
   {[...shortVideos, ...shortVideos].map((item, index) => (
     <SwiperSlide
       key={`short-local-${index}`}
-      className="min-w-[300px] !w-[80%] lg:!w-[28%] flex-shrink-0"
+      className="min-w-[300px] !w-[80%] lg:!w-[28%] flex-shrink-0 relative"
     >
       <div
         onClick={() => {
@@ -285,25 +294,16 @@ export default function BigSection() {
                                     /> */}
         <video
           src={item.video}
-          className="w-full h-full object-cover pointer-events-auto aspect-[9/16]"
+          className="w-full h-full pointer-events-auto aspect-[9/16]"
           muted
           autoPlay
           loop
           playsInline
           preload="none"
         />
-{/* <video
-  src={item.video}
-  className="w-full h-full object-cover pointer-events-none aspect-[9/16]"
-  muted
-  autoPlay
-  loop
-  playsInline
-  preload="auto"
-/> */}
 
         {/* Views */}
-        <div className="absolute top-0 left-0 text-[20px] sm:text-[20px] lg:text-[45px] italic text-white leading-none bg-[#1022FF] px-6 py-3 z-[999]">
+        <div className="absolute top-0 left-0 text-[20px] sm:text-[20px] lg:text-[45px] italic text-white leading-none bg-[#1022FF] px-6 py-3 z-[999] opacity-100 views-overlay">
           {item.views}
           <span className="block text-[16px] lg:text-[18px]">views</span>
         </div>
