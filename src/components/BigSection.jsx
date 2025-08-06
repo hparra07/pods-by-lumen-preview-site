@@ -241,68 +241,68 @@ export default function BigSection() {
                         Short-Form <span className="font-extrabold block sm:inline">Content</span> 
                     </h2>
                     <div ref={shortsContainerRef}>
-<Swiper
-  onSwiper={(swiper) => (swiperRef.current = swiper)}
-  modules={[Pagination, Autoplay]}
-  spaceBetween={80}
-  loop={true}
-  speed={5000}
-  slidesPerView="auto"
-  centeredSlides={true}
-  grabCursor={false}
-  autoplay={{
-    delay: 0,
-    disableOnInteraction: false,
-  }}
-  pagination={{
-    el: '.swiper-custom-pagination-shorts',
-    type: 'progressbar',
-  }}
-/*   breakpoints={{
-    640: { slidesPerView: 2 },
-    768: { slidesPerView: 3 },
-    1024: { slidesPerView: 4 },
-  }} */
->
-  {[...shortVideos, ...shortVideos].map((item, index) => (
-    <SwiperSlide
-      key={`short-local-${index}`}
-      className="min-w-[300px] !w-[80%] lg:!w-[28%] flex-shrink-0 relative"
-    >
-      <div
-        onClick={() => {
-          setVideoUrl(item.video);
-          setVideoType('local');
-          setSelectedVideo(item);
-        }}
-        className="relative cursor-pointer group overflow-visible"
-      >
-        {/* VIDEO */}
+                        <Swiper
+                        onSwiper={(swiper) => (swiperRef.current = swiper)}
+                        modules={[Pagination, Autoplay]}
+                        spaceBetween={80}
+                        loop={true}
+                        speed={5000}
+                        slidesPerView="auto"
+                        centeredSlides={true}
+                        grabCursor={false}
+                        autoplay={{
+                            delay: 0,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                            el: '.swiper-custom-pagination-shorts',
+                            type: 'progressbar',
+                        }}
+                        /*   breakpoints={{
+                            640: { slidesPerView: 2 },
+                            768: { slidesPerView: 3 },
+                            1024: { slidesPerView: 4 },
+                        }} */
+                        >
+                        {[...shortVideos, ...shortVideos].map((item, index) => (
+                            <SwiperSlide
+                            key={`short-local-${index}`}
+                            className="min-w-[300px] !w-[80%] md:!w-[50%] lg:!w-[21%] flex-shrink-0 relative"
+                            >
+                            <div
+                                onClick={() => {
+                                setVideoUrl(item.video);
+                                setVideoType('local');
+                                setSelectedVideo(item);
+                                }}
+                                className="relative cursor-pointer group overflow-visible"
+                            >
+                                {/* VIDEO */}
 
-        <video
-          src={item.video}
-          className="w-full h-full pointer-events-auto aspect-[9/16]"
-          muted
-          autoPlay
-          loop
-          playsInline
-          preload="none"
-        />
+                                <video
+                                src={item.video}
+                                className="w-full h-full pointer-events-auto aspect-[9/16]"
+                                muted
+                                autoPlay
+                                loop
+                                playsInline
+                                preload="none"
+                                />
 
-        {/* Views */}
-        <div className="absolute top-0 left-0 text-[20px] sm:text-[20px] lg:text-[45px] italic text-white leading-none bg-[#1022FF] px-6 py-3 z-[999] opacity-100 views-overlay">
-          {item.views}
-          <span className="block text-[16px] lg:text-[18px]">views</span>
-        </div>
+                                {/* Views */}
+                                <div className="absolute top-0 left-0 text-[20px] sm:text-[20px] lg:text-[45px] italic text-white leading-none bg-[#1022FF] px-6 py-3 z-[999] opacity-100 views-overlay">
+                                {item.views}
+                                <span className="block text-[16px] lg:text-[18px]">views</span>
+                                </div>
 
-        {/* Play icon hover */}
-        <div className="hidden sm:flex absolute inset-0 bg-black/40 items-center justify-center opacity-0 group-hover:opacity-100 transition z-20">
-          <span className="text-white text-4xl">▶</span>
-        </div>
-      </div>
-    </SwiperSlide>
-  ))}
-</Swiper>
+                                {/* Play icon hover */}
+                                <div className="hidden sm:flex absolute inset-0 bg-black/40 items-center justify-center opacity-0 group-hover:opacity-100 transition z-20">
+                                <span className="text-white text-4xl">▶</span>
+                                </div>
+                            </div>
+                            </SwiperSlide>
+                        ))}
+                        </Swiper>
 
 
                         <div className="swiper-custom-pagination-shorts mt-20 h-1 bg-white overflow-hidden">

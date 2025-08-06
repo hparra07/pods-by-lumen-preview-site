@@ -62,7 +62,7 @@ export default function Slider() {
                     }} */
                 >
                     {people.map((person, index) => (
-                        <SwiperSlide key={index} className='min-w-[300px] !w-[80%] lg:!w-[28%] flex-shrink-0'>
+                        <SwiperSlide key={index} className='min-w-[300px] !w-[80%] md:!w-[50%] lg:!w-[21%] flex-shrink-0'>
                             <div className="relative w-full h-full overflow-hidden">
                                 <img
                                     src={person.img}
