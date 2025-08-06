@@ -14,13 +14,13 @@ export default function Footer() {
                 <div className='flex flex-col items-center gap-5 p-5 order-first lg:order-2'>
                     <p className='text-[20px]'>Follow us:</p>
                     <div className='flex items-center gap-10'>
-                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.youtube.com/@PodsbyLumen" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faYoutube} className="text-[40px] hover:text-[#1024ffb9] transition duration-200 hover:-translate-y-1 transform" />
                         </a>
-                        <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.tiktok.com/@podsbylumen" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faTiktok} className="text-[40px] hover:text-[#1024ffb9] transition duration-200 hover:-translate-y-1 transform" />
                         </a>
-                        <a href="https://www.instagram.com/lumenstudio.io/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/podsbylumen/" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faInstagram} className="text-[40px] hover:text-[#1024ffb9] transition duration-200 hover:-translate-y-1 transform" />
                         </a>
                     </div>
