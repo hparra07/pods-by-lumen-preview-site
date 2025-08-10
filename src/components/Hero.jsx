@@ -1,15 +1,32 @@
 import podsLogo from '../assets/images/pods-logo.png';
 import bgVideo from '../assets/video/Podsbylumen-Reel-1.mp4';
+import backgroundImage from '../assets/images/hero-sec--background-video.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
+import { useState } from 'react'; // Necesario para usar el estado
+
 
 export default function Hero() {
+
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false); // Estado para controlar si el video está cargado
+
+    // Función para detectar cuando el video se ha cargado
+    const handleVideoLoad = () => {
+        setIsVideoLoaded(true); // Cambiamos el estado a true cuando el video se carga
+    };
+
     return (
         <section className="relative min-h-screen flex items-end lg:items-center justify-center text-white overflow-hidden">
-            {/* contenedor del video + overlay */}
+            {/* Contenedor del video + overlay */}
             <div className="absolute inset-0 p-3 md:p-5 z-0">
                 <div className="relative w-full h-full rounded-[20px] overflow-hidden">
+                    {/* Si el video aún no se ha cargado, muestra la imagen de fondo */}
+                    {!isVideoLoaded && (
+                        <div className="w-full h-full bg-cover" style={{ backgroundImage: `url(${backgroundImage})` }} />
+                    )}
+
+                    {/* Video que se reproduce automáticamente */}
                     <video
                         src={bgVideo}
                         autoPlay
@@ -17,7 +34,9 @@ export default function Hero() {
                         muted
                         preload="auto"
                         className="w-full h-full object-cover"
+                        onLoadedData={handleVideoLoad} // Detecta cuando el video está listo
                     />
+
                     {/* Overlay solo sobre el video */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1125ffbe] to-transparent" />
                 </div>
