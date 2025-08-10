@@ -23,7 +23,12 @@ export default function Hero() {
                 <div className="relative w-full h-full rounded-[20px] overflow-hidden">
                     {/* Si el video aún no se ha cargado, muestra la imagen de fondo */}
                     {!isVideoLoaded && (
-                        <div className="w-full h-full bg-cover" style={{ backgroundImage: `url(${backgroundImage})` }} />
+                        <img
+                            src={backgroundImage}
+                            alt="Background"
+                            className="w-full h-full object-cover"
+                        />
+                       /*  <div className="w-full h-full bg-cover" style={{ backgroundImage: `url(${backgroundImage})` }} /> */
                     )}
 
                     {/* Video que se reproduce automáticamente */}
