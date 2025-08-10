@@ -1,5 +1,5 @@
 import podsLogo from '../assets/images/pods-logo.png';
-import bgVideo from '../assets/video/PodsByLumen_Reel.mp4';
+import bgVideo from '../assets/video/Podsbylumen-Reel-1.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,6 +16,7 @@ export default function Hero() {
                         loop
                         muted
                         playsInline
+                        preload="auto"
                         className="w-full h-full object-cover"
                     />
                     {/* Overlay solo sobre el video */}

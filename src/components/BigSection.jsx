@@ -11,8 +11,11 @@ import CountUp from 'react-countup';
 
 import { useRef, useState, useEffect } from 'react';
 
-import team from '../assets/images/team--pic-wrapper.png';
+//import team from '../assets/images/team--pic-wrapper.png';
+import juan from '../assets/images/juan-optimized.png';
 import bigGrid from '../assets/images/big-white-grid.svg';
+import bgVideoTeam from '../assets/video/horizontal-v2.mp4';
+
 
 import jesseIntw from '../assets/images/content--thumbnail-1.png';
 import mrBeast from '../assets/images/content--thumbnail.png';
@@ -357,28 +360,46 @@ export default function BigSection() {
             </div>
 
             {/* About Us Section */}
-            <div className="bg-white pt-[60px] md:pt-[80px] lg:pt-[120px] pb-[40px] md:pb-[80px] lg:pb-[120px] px-6">
-                <div className="relative w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center">
-                    <div className="text-black text-[25px] sm:text-[35px] lg:text-[45px] font-medium leading-none w-full">
-                        <p>
-                            We’re a robust team with over 10 years experience in content creation for different platforms.
-                        </p>
-                        <br />
-                        <p>
-                            With internal systems and workflows that ensures a high level of production, performance and reliability.
-                        </p>
-                        <br />
-                        <p className="font-extrabold">
-                            WE LOVE WHAT WE DO.
-                        </p>
-                    </div>
-
-                    <div className="mt-8 flex items-center justify-center w-full">
-                        <img src={team} alt="Team Lumen" className="w-90 h-auto" />
-                    </div> 
-
+            <div className="relative bg-white pt-[60px] md:pt-[80px] lg:pt-[120px] pb-[40px] md:pb-[80px] lg:pb-[120px] px-6">
+                {/* Contenedor del video de fondo */}
+                <div className="absolute inset-0 w-full h-full z-0">
+                    <video
+                        src={bgVideoTeam}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        className="w-full h-full object-cover"
+                    />
+                    {/* Overlay solo sobre el video */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#000000] to-[#00000050]" />
                 </div>
-            </div>
+
+                {/* Contenido */}
+                    <div className="relative z-10 w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center gap-[50px]">
+                        <div className="text-white text-[25px] sm:text-[35px] lg:text-[45px] font-medium leading-none w-full">
+                            <p>
+                                We’re a robust team with over 10 years experience in content creation for different platforms.
+                            </p>
+                            <br />
+                            <p>
+                                With internal systems and workflows that ensures a high level of production, performance and reliability.
+                            </p>
+                            <br />
+                            <p className="font-extrabold">
+                                WE LOVE WHAT WE DO.
+                            </p>
+                        </div>
+
+                        <div className="mt-8 flex flex-col items-center justify-center w-full">
+                            <img src={juan} alt="Juan Rojas" className="w-80 mx-auto h-auto rounded-full" />
+                            <h3 className="text-white text-center text-[16px] sm:text-[18px] lg:text-[20px] font-medium leading-none w-full mt-3"> 
+                                <strong>Juan Rojas </strong>- <span className="font-light">CEO, Co-Founder</span>
+                            </h3>
+                        </div> 
+                    </div>
+                </div>
             
             {/* CTA Footer Section */}
             <div className="bg-gradient-to-b from-[#1022FF] via-[#0E1EE0]/64 to-[#0A1499]/0 pt-[60px] md:pt-[80px] lg:pt-[120px] pb-[40px] md:pb-[80px] lg:pb-[200px]">
