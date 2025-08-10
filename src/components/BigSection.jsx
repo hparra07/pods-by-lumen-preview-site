@@ -360,7 +360,7 @@ export default function BigSection() {
             </div>
 
             {/* About Us Section */}
-            <div className="relative bg-white pt-[60px] md:pt-[80px] lg:pt-[120px] pb-[40px] md:pb-[80px] lg:pb-[120px] px-6">
+            <div className="relative bg-white pt-[60px] md:pt-[80px] lg:pt-[200px] pb-[40px] md:pb-[80px] lg:pb-[200px] px-6">
                 {/* Contenedor del video de fondo */}
                 <div className="absolute inset-0 w-full h-full z-0">
                     <video
@@ -393,7 +393,7 @@ export default function BigSection() {
                         </div>
 
                         <div className="mt-8 flex flex-col items-center justify-center w-full">
-                            <img src={juan} alt="Juan Rojas" className="w-[80%] mx-auto h-auto rounded-full" />
+                            <img src={juan} alt="Juan Rojas" className="w-[55%] mx-auto h-auto rounded-full" />
                             <h3 className="text-white text-center text-[16px] sm:text-[18px] lg:text-[20px] font-medium leading-none w-full mt-3"> 
                                 <strong>Juan Rojas </strong>- <span className="font-light">CEO, Co-Founder</span>
                             </h3>

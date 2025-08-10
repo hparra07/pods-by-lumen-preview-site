@@ -12,14 +12,14 @@ import person4 from '../assets/images/best-pic-4.png';
 
 export default function Slider() {
     const people = [
-        { img: person1, subs: '1M' },
-        { img: person2, subs: '1M' },
-        { img: person3, subs: '1.5M' },
-        { img: person4, subs: '1M' },
-        { img: person1, subs: '1M' },
-        { img: person2, subs: '1M' },
-        { img: person3, subs: '1.5M' },
-        { img: person4, subs: '1M' }
+        { img: person1, subs: '1.3M' },
+        { img: person2, subs: '1.6M' },
+        { img: person3, subs: '626K' },
+        { img: person4, subs: '1.9M' },
+        { img: person1, subs: '1.3M' },
+        { img: person2, subs: '1.6M' },
+        { img: person3, subs: '626K' },
+        { img: person4, subs: '1.9M' }
     ];
 
     return (
