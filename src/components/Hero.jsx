@@ -11,15 +11,15 @@ export default function Hero() {
             <div className="absolute inset-0 p-3 md:p-5 z-0">
                 <div className="relative w-full h-full rounded-[20px] overflow-hidden">
                     
-                    <iframe src="https://player.vimeo.com/video/1108915221?autoplay=1&loop=1&muted=1&background=1&badge=0" className="w-[100vw] h-[100vh] aspect-[16/9] object-cover" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen />
+                    {/* <iframe src="https://player.vimeo.com/video/1108915221?autoplay=1&loop=1&muted=1&background=1&badge=0" className="w-[100vw] h-[100vh] aspect-[16/9] object-cover" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen /> */}
 
-                    {/* <video
+                    <video
                         src={bgVideo}
                         autoPlay
                         loop
                         muted
                         className="w-full h-full object-cover"
-                    /> */}
+                    />
                     {/* Overlay solo sobre el video */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1125ffbe] to-transparent" />
                 </div>
