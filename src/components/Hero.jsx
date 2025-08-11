@@ -1,47 +1,25 @@
 import podsLogo from '../assets/images/pods-logo.png';
 import bgVideo from '../assets/video/Podsbylumen-Reel-1.mp4';
-import backgroundImage from '../assets/images/hero-sec--background-video.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-import { useState } from 'react'; // Necesario para usar el estado
-
 
 export default function Hero() {
-
-    const [isVideoLoaded, setIsVideoLoaded] = useState(false); // Estado para controlar si el video está cargado
-
-    // Función para detectar cuando el video se ha cargado
-    const handleVideoLoad = () => {
-        setIsVideoLoaded(true); // Cambiamos el estado a true cuando el video se carga
-    };
-
     return (
         <section className="relative min-h-screen flex items-end lg:items-center justify-center text-white overflow-hidden">
-            {/* Contenedor del video + overlay */}
+            {/* contenedor del video + overlay */}
             <div className="absolute inset-0 p-3 md:p-5 z-0">
                 <div className="relative w-full h-full rounded-[20px] overflow-hidden">
-                    {/* Si el video aún no se ha cargado, muestra la imagen de fondo */}
-                    {!isVideoLoaded && (
-                        <img
-                            src={backgroundImage}
-                            alt="Background"
-                            className="w-full h-full object-cover"
-                        />
-                       /*  <div className="w-full h-full bg-cover" style={{ backgroundImage: `url(${backgroundImage})` }} /> */
-                    )}
+                    
+                    <iframe src="https://player.vimeo.com/video/1108915221?autoplay=1&loop=1&muted=1&background=1&badge=0" className="w-[100vw] h-[100vh] aspect-[16/9] object-cover" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen />
 
-                    {/* Video que se reproduce automáticamente */}
-                    <video
+                    {/* <video
                         src={bgVideo}
                         autoPlay
                         loop
                         muted
-                        preload="auto"
                         className="w-full h-full object-cover"
-                        onLoadedData={handleVideoLoad} // Detecta cuando el video está listo
-                    />
-
+                    /> */}
                     {/* Overlay solo sobre el video */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1125ffbe] to-transparent" />
                 </div>
