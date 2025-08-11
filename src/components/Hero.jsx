@@ -2,30 +2,41 @@ import podsLogo from '../assets/images/pods-logo.png';
 import bgVideo from '../assets/video/PodsByLumen_Reel.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useState } from "react";
+import heroPlaceholder from "../assets/images/hero-sec--background-video.png"; // Ajusta la ruta según tu proyecto
 
 
 export default function Hero() {
+    const [videoLoaded, setVideoLoaded] = useState(false);
+
     return (
         <section className="relative min-h-screen flex items-end lg:items-center justify-center text-white overflow-hidden">
             {/* contenedor del video + overlay */}
             <div className="absolute inset-0 p-3 md:p-5 z-0">
-            <div className="relative w-full h-full rounded-[20px] overflow-hidden">
-                
-                {/* Placeholder opcional (imagen mientras carga) */}
-                {/* <img src="..." alt="" className="absolute inset-0 w-full h-full object-cover" /> */}
+                <div className="relative w-full h-full rounded-[20px] overflow-hidden">
 
-                {/* Video Vimeo centrado y escalado como en Pasta Mancini */}
-                <iframe
-                src="https://player.vimeo.com/video/1108915221?api=1&background=1&autoplay=1&muted=1&loop=1"
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                            w-[100vw] h-[95vw] min-h-full min-w-[177.77vh]"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                ></iframe>
+                    {/* Placeholder mientras carga */}
+                    {!videoLoaded && (
+                    <img
+                        src={heroPlaceholder}
+                        alt="Hero background"
+                        className="absolute inset-0 w-full h-full object-cover z-10"
+                    />
+                    )}
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1125ffbe] to-transparent" />
-            </div>
+                    {/* Iframe Vimeo */}
+                    <iframe
+                    src="https://player.vimeo.com/video/1108915221?api=1&background=1&autoplay=1&muted=1&loop=1"
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                                w-[100vw] h-[95vw] min-h-full min-w-[177.77vh]"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    onLoad={() => setVideoLoaded(true)} // Cuando el iframe carga, ocultamos el placeholder
+                    ></iframe>
+
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1125ffbe] to-transparent" />
+                </div>
             </div>
 
 
