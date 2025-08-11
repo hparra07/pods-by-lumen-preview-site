@@ -1,5 +1,5 @@
 import podsLogo from '../assets/images/pods-logo.png';
-import bgVideo from '../assets/video/Podsbylumen-Reel-1.mp4';
+import bgVideo from '../assets/video/PodsByLumen_Reel.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,21 +9,26 @@ export default function Hero() {
         <section className="relative min-h-screen flex items-end lg:items-center justify-center text-white overflow-hidden">
             {/* contenedor del video + overlay */}
             <div className="absolute inset-0 p-3 md:p-5 z-0">
-                <div className="relative w-full h-full rounded-[20px] overflow-hidden">
-                    
-                    {/* <iframe src="https://player.vimeo.com/video/1108915221?autoplay=1&loop=1&muted=1&background=1&badge=0" className="w-[100vw] h-[100vh] aspect-[16/9] object-cover" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen /> */}
+            <div className="relative w-full h-full rounded-[20px] overflow-hidden">
+                
+                {/* Placeholder opcional (imagen mientras carga) */}
+                {/* <img src="..." alt="" className="absolute inset-0 w-full h-full object-cover" /> */}
 
-                    <video
-                        src={bgVideo}
-                        autoPlay
-                        loop
-                        muted
-                        className="w-full h-full object-cover"
-                    />
-                    {/* Overlay solo sobre el video */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1125ffbe] to-transparent" />
-                </div>
+                {/* Video Vimeo centrado y escalado como en Pasta Mancini */}
+                <iframe
+                src="https://player.vimeo.com/video/1108915221?api=1&background=1&autoplay=1&muted=1&loop=1"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                            w-[100vw] h-[95vw] min-h-full min-w-[177.77vh]"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                ></iframe>
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1125ffbe] to-transparent" />
             </div>
+            </div>
+
+
 
             {/* Logo */}
             <img src={podsLogo} className="logo react absolute top-[60px] z-20 w-40 md:w-auto" alt="Pods by Lumen" />
