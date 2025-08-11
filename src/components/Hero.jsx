@@ -2,42 +2,66 @@ import podsLogo from '../assets/images/pods-logo.png';
 import bgVideo from '../assets/video/PodsByLumen_Reel.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Player from "@vimeo/player";
 import heroPlaceholder from "../assets/images/hero-sec--background-video.png"; // Ajusta la ruta según tu proyecto
 
-
 export default function Hero() {
-    const [videoLoaded, setVideoLoaded] = useState(false);
 
+ const iframeRef = useRef(null);
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    if (!iframeRef.current) return;
+
+    const player = new Player(iframeRef.current);
+
+    // Esperamos a que empiece a reproducir para mostrar el fade-in
+    player.on("play", () => {
+      // Usamos requestAnimationFrame para asegurar que el DOM pinte opacity-0 primero
+      requestAnimationFrame(() => setShowVideo(true));
+    });
+
+    return () => {
+      player.unload?.();
+    };
+  }, []);
     return (
         <section className="relative min-h-screen flex items-end lg:items-center justify-center text-white overflow-hidden">
             {/* contenedor del video + overlay */}
-            <div className="absolute inset-0 p-3 md:p-5 z-0">
-                <div className="relative w-full h-full rounded-[20px] overflow-hidden">
+        <div className="absolute inset-0 p-3 md:p-5 z-0">
+            <div className="relative w-full h-full rounded-[20px] overflow-hidden">
 
-                    {/* Placeholder mientras carga */}
-                    {!videoLoaded && (
-                    <img
-                        src={heroPlaceholder}
-                        alt="Hero background"
-                        className="absolute inset-0 w-full h-full object-cover z-10"
-                    />
-                    )}
+                {/* Placeholder con fade-out */}
+                <img
+                src={heroPlaceholder}
+                alt="Hero background"
+                className={`absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-700 ease-in-out ${
+                    showVideo ? "opacity-0" : "opacity-100"
+                }`}
+                />
 
-                    {/* Iframe Vimeo */}
-                    <iframe
-                    src="https://player.vimeo.com/video/1108915221?api=1&background=1&autoplay=1&muted=1&loop=1"
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                                w-[100vw] h-[95vw] min-h-full min-w-[177.77vh]"
+                {/* Contenedor con fade-in */}
+                <div
+                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                            w-[100vw] h-[95vw] min-h-full min-w-[177.77vh]
+                            transition-opacity duration-700 ease-in-out ${
+                                showVideo ? "opacity-100" : "opacity-0"
+                            }`}
+                >
+                <iframe
+                    ref={iframeRef}
+                    src="https://player.vimeo.com/video/1108915221?api=1&background=1&autoplay=1&muted=1&loop=1&playsinline=1"
+                    className="w-full h-full"
                     allow="autoplay; fullscreen; picture-in-picture"
                     allowFullScreen
-                    onLoad={() => setVideoLoaded(true)} // Cuando el iframe carga, ocultamos el placeholder
-                    ></iframe>
-
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1125ffbe] to-transparent" />
+                />
                 </div>
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1125ffbe] to-transparent" />
             </div>
+        </div>
 
 
 
